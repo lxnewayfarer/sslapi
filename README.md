@@ -22,7 +22,7 @@ DELETE /domain  # удаление домена. пример { "id": 3 }
 GET /status     # просмотр всей информации. без параметров
 
 
-web: /sidekiq   # панель sidekiq. пароль и логин "admin" (файл '.env' в корне проекта) 
+web: /sidekiq   # панель sidekiq. пароль и логин "admin" 
 
 ```
 
