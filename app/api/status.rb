@@ -1,9 +1,7 @@
+# просто показывает всю информацию
 class Status < Grape::API
-    format :json
-    get :status do
-        domains = Domain.order('created_at DESC');
-    end     
+  format :json
+  get :status do
+    domains = Domain.order("created_at DESC")
   end
-
-
-  
+end

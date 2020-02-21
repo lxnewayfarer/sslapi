@@ -5,7 +5,6 @@ class CreateDomains < ActiveRecord::Migration[6.0]
       t.boolean :isok
       t.text :error
       t.string :param
-
       t.timestamps
     end
   end

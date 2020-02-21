@@ -1,0 +1,26 @@
+# latest version
+version: "3"
+
+# сервисы (контейнеры)
+services:
+  # БД
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=sslapi
+  redis:
+    image: redis
+    restart: always
+    container_name: redis
+    ports:
+      - 6379:6379
+  
+    
+  
+    
+  

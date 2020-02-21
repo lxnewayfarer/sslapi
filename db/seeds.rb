@@ -6,15 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Domain.create({
-    domain: 'https://github.com/',
-    isok: true,
-    error: 'None',
-    param: '2 weeks'
+  domain: "https://github.com/",
+  isok: true,
+  error: "None",
+  param: "2 weeks",
 })
 
 Domain.create({
-    domain: 'https://google.com/',
-    isok: true,
-    error: 'None',
-    param: '2 weeks'
+  domain: "https://google.com/",
+  isok: true,
+  error: "None",
+  param: "2 weeks",
 })
