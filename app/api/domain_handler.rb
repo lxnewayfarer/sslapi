@@ -1,12 +1,12 @@
 class DomainHandler < Grape::API
   format :json
 
-  # method GET /domain presents only data expired by grape entities
+  # method `GET /domain` presents only data expired by grape entities
   get :domain do
     present Domain.order("created_at DESC"), with: Entities::DomainEntity
   end
 
-  # method POST /domain adding domain. example: {"domain": "https://domain.com"}
+  # method `POST /domain` adding domain. example: { "domain": "https://domain.com" }
   desc "Add domain"
   params do
     requires :domain, type: String, desc: 'Domain you want to add, for example: "https://google.com"'
@@ -21,7 +21,7 @@ class DomainHandler < Grape::API
     end
   end
 
-  # method DELETE /domain deleting domain by id
+  # method `DELETE /domain` deleting domain by id
   desc "Delete domain"
   params do
     requires :id, type: Integer, desc: "Domain ID"
@@ -31,10 +31,10 @@ class DomainHandler < Grape::API
     domain.destroy
     present response: "Domain deleted", data: domain[:domain]
   rescue ActiveRecord::RecordNotFound
-    present response: "Error deleting domain", data: "Record not found"
+    present response: "Error deleting domain. Record not found"
   end
 
-  # method PUT /domain updating domain by id
+  # method `PUT /domain` updating domain by id
   desc "Update domain"
   params do
     requires :id, type: Integer, desc: "Domain ID"
@@ -45,6 +45,6 @@ class DomainHandler < Grape::API
     domain.update_attributes(params)
     present response: "Domain updated", data: domain[:domain]
   rescue ActiveRecord::RecordNotFound
-    present response: "Error updating domain", data: "Record not found"
+    present response: "Error updating domain. Record not found"
   end
 end

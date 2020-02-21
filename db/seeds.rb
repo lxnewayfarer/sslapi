@@ -1,20 +1,28 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 Domain.create({
   domain: "https://github.com/",
-  isok: true,
-  error: "None",
-  param: "2 weeks",
 })
 
 Domain.create({
-  domain: "https://google.com/",
-  isok: true,
-  error: "None",
-  param: "2 weeks",
+  domain: "https://instagram.com/",
 })
+
+Domain.create({
+  domain: "https://expired.badssl.com/",
+})
+
+Domain.create({
+  domain: "https://wrong.host.badssl.com/",
+})
+
+Domain.create({
+  domain: "https://self-signed.badssl.com//",
+})
+
+Domain.create({
+  domain: "https://untrusted-root.badssl.com/",
+})
+
+Domain.create({
+  domain: "https://thissitedoesneventexist.com/",
+})
+

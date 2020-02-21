@@ -2,4 +2,4 @@
 
 :schedule:
   SslWorker:
-    every: 20m   # Runs once per minute
+    every: ['20m', first_in: '0s']   # Runs once per minute

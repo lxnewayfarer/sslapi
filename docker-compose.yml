@@ -6,13 +6,13 @@ services:
   # БД
   db:
     image: postgres
-    ports:
-      - 5432:5432
     container_name: postgres
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=admin
       - POSTGRES_DB=sslapi
+    ports:
+      - 5432:5432
   redis:
     image: redis
     restart: always

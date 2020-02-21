@@ -5,10 +5,12 @@ require "sidekiq-scheduler"
 
 class SslWorker
   include Sidekiq::Worker
+
   def perform()
     domains = Domain.all
     domains.each do |d|
       CheckWorker.perform_async(d.domain)
     end
   end
+  
 end

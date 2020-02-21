@@ -39,9 +39,9 @@ class CheckWorker
 
     #updating status. true - no errors, false - theres errors
     if current_state == ""
-      d.update_attribute(:status, true)
+      d.update_attribute(:status_is_fine, true)
     else
-      d.update_attribute(:status, false)
+      d.update_attribute(:status_is_fine, false)
     end
 
     # updating current_state. empty string means no errors
