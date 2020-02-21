@@ -4,21 +4,30 @@
 docker-compose up   # запускает в контейнерах postgres и redis
 rails db:migrate    # только в первый раз для миграции
 rails db:seed       # если нужно чем-то заполнить БД
-bundle exec sidekiq # запускает проверку каждые 20 мин, первый раз сразу (config/sidekiq.yml)
-rails s             # запускает сервер rails
+bundle exec sidekiq     # запускает проверку каждые 20 мин, первый раз сразу (config/sidekiq.yml)
+bundle exec rails server    # запускает сервер rails
 ```
 
 Доступные запросы:
+```
 GET /domain     # просмотр всех доменов. без параметров
+
 POST /domain    # добавление домена. пример { "domain": "https://change.org" }
+
 PUT /domain     # изменение домена. пример { "id": 5, "https://github.com/"}
+
 DELETE /domain  # удаление домена. пример { "id": 3 }
+
 
 GET /status     # просмотр всей информации. без параметров
 
+
 web: /sidekiq   # панель sidekiq. пароль и логин "admin" (файл '.env' в корне проекта) 
 
+```
+
 Пример ответа на /status:
+```
 [
     {
         "id": 8,
@@ -48,3 +57,7 @@ web: /sidekiq   # панель sidekiq. пароль и логин "admin" (фа
         "expire_days": -1
     }
 ]
+```
+
+Rubocop настроен в .rubocop.yml: отключены пара метрик комплексности, увеличена максимальная длина метода
+до 50 строк, включая комменты и выключена метрика "use ascii comments only".

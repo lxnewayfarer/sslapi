@@ -23,5 +23,4 @@ ActiveRecord::Schema.define(version: 2020_02_21_164048) do
     t.text "current_state"
     t.integer "expire_days"
   end
-
 end

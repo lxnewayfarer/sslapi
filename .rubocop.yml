@@ -1,1 +1,23 @@
 inherit_from: .rubocop_todo.yml
+
+AsciiComments:
+  Enabled: false
+
+Metrics/MethodLength:
+  Description: 'Avoid methods longer than 50 lines of code.'
+  StyleGuide: '#short-methods'
+  Enabled: true
+  CountComments: true  # count full line comments?
+  Max: 50 
+  ExcludedMethods: []
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Description: >-
+                 A complexity metric geared towards measuring complexity for a
+                 human reader.
+  Enabled: false
+  VersionAdded: '0.25'
+  Max: 7

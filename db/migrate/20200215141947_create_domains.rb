@@ -1,3 +1,4 @@
+# creating domains
 class CreateDomains < ActiveRecord::Migration[6.0]
   def change
     create_table :domains do |t|
