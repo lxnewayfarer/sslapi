@@ -44,6 +44,7 @@ class DomainHandler < Grape::API
   put :domain do
     domain = Domain.find(params[:id])
     domain.update_attributes(params)
+    CheckWorker.perform_async(domain.domain)
     present response: 'Domain updated', data: domain[:domain]
   rescue ActiveRecord::RecordNotFound
     present response: 'Error updating domain. Record not found'
