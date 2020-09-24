@@ -1,4 +1,4 @@
-Запуск:
+Start up:
 
 ```
 docker-compose up   # запускает в контейнерах postgres и redis
@@ -8,7 +8,7 @@ bundle exec sidekiq     # запускает проверку каждые 20 м
 bundle exec rails server    # запускает сервер rails
 ```
 
-Доступные запросы:
+Available requests:
 ```
 GET /domain     # просмотр всех доменов. без параметров
 
@@ -26,7 +26,7 @@ web: /sidekiq   # панель sidekiq. пароль и логин "admin" (conf
 
 ```
 
-Пример ответа на /status:
+Response example /status:
 ```
 [
     {
@@ -58,6 +58,3 @@ web: /sidekiq   # панель sidekiq. пароль и логин "admin" (conf
     }
 ]
 ```
-
-Rubocop настроен в .rubocop.yml: отключены пара метрик комплексности, увеличена максимальная длина метода
-до 50 строк, включая комменты и выключена метрика "use ascii comments only".
