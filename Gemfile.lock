@@ -132,7 +132,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     pg (1.2.2)
     pg (1.2.2-x64-mingw32)
-    puma (4.3.1)
+    puma (4.3.5)
       nio4r (~> 2.0)
     raabro (1.1.6)
     rack (2.2.3)
@@ -231,7 +231,7 @@ DEPENDENCIES
   grape
   grape-entity
   pg
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.2, >= 6.0.2.1)
   redis-rails
   sidekiq (~> 6.0.5, >= 6.0.5)
